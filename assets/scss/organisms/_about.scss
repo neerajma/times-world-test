@@ -1,0 +1,55 @@
+
+// About Us
+.tw-about {
+    padding: $spacer-7 0;
+  
+    &__desc {
+      max-width: 400px;
+      margin-bottom: $spacer-2;
+    }
+  
+    &__title {
+      font-size: 24px;
+      @include Felixti;
+      margin-bottom: $spacer-3;
+      display: block;
+    }
+    &__images {
+      position: relative;
+      min-height: 600px;
+    }
+    &__image {
+      max-width: 360px;
+      object-fit: contain;
+      border-radius: 8px;
+      position: absolute;
+      &:nth-child(2) {
+        bottom: 0;
+        left: 0;
+      }
+      &:first-child {
+        top: 0;
+        right: 20px;
+        box-shadow: 4px 4px 20px 0px #58585840;
+        z-index: 10;
+      }
+    }
+  }
+  
+  @include mobile-tablet {
+    .tw-about {
+      &__images {
+        min-height: 100%;
+      }
+      &__image {
+        position: relative;
+        &:nth-child(2) {
+          display: none;
+        }
+        &:first-child {
+          margin-top: $spacer-3;
+          right: 0;
+        }
+      }
+    }
+  }

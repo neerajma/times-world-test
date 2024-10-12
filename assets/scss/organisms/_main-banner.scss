@@ -1,0 +1,85 @@
+// Main Banner
+.tw-main-bg {
+    position: relative;
+  
+    &__main {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  
+    &__slider-container {
+      align-items: end;
+      height: 100vh;
+      position: relative;
+      z-index: 3;
+    }
+  
+    &__slider-content {
+      max-width: 800px;
+      z-index: 10;
+      position: relative;
+      margin: 0 auto;
+      padding-bottom: 100px;
+    }
+  
+    &__slide-title {
+      @include Felixti;
+      font-size: 45px;
+      line-height: 1.2;
+      color: $color-white;
+    }
+  
+    & &__img {
+      img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center;
+        object-position: center;
+      }
+      &::before {
+        content: "";
+        background: $color-black;
+        opacity: 0.5;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+      }
+    }
+  
+    &__element-img {
+      position: absolute;
+      bottom: -70px;
+      z-index: 1;
+      left: 90px;
+    }
+  }
+  
+  @include mobile {
+    .tw-main-bg {
+      &__slide-title {
+        font-size: 24px;
+      }
+    }
+  }
+  
+  @include tablet {
+    .tw-main-bg {
+      &__slide-title {
+        font-size: 32px;
+      }
+    }
+  }
+  

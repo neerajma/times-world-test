@@ -1,0 +1,62 @@
+// Base
+@import "base/fonts";
+@import "base/break-point";
+@import "base/color";
+@import "base/reset";
+@import "base/layout";
+@import "base/base";
+
+//Atom
+@import "atom/button";
+
+// Molecules
+@import "molecules/heading";
+// Organisms
+@import "organisms/header";
+@import "organisms/main-banner";
+@import "organisms/about";
+@import "organisms/promotions";
+@import "organisms/events";
+@import "organisms/gallery";
+@import "organisms/footer";
+
+
+//Page
+
+.overflow {
+  overflow: hidden;
+}
+
+//Slider Dots
+.slick-dots {
+  bottom: 30px;
+  li {
+    button {
+      display: block;
+      width: 14px;
+      height: 14px;
+      padding: 0;
+      border-radius: 100%;
+      background: $color-white-2;
+      text-indent: -9999px;
+      outline-offset: 3px;
+    }
+    &.slick-active button {
+      background-color: $color-white;
+    }
+  }
+}
+
+.slick-slide {
+  position: relative;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+
+
+
+
+

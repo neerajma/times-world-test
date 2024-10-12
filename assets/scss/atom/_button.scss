@@ -1,0 +1,49 @@
+// Button
+.tw-btn {
+  border: 2px solid $color-dark-green-1;
+  background-color: $color-dark-green-1;
+  color: $color-white;
+  min-width: 160px;
+  width: auto;
+  padding: 12px $spacer-3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &:hover {
+    border: 2px solid $color-dark-green-1;
+    background-color: $color-grey-3;
+    color: $color-dark-green-1;
+  }
+
+  &--secondary {
+    color: $color-dark-green-1;
+    border: 2px solid $color-white;
+    background-color: $color-white;
+
+    &:hover {
+      background-color: $color-dark-green-1;
+      border: 2px solid $color-white;
+      color: $color-white;
+    }
+  }
+
+  &--sticky {
+    position: fixed;
+    right: -2px;
+    border: 2px solid #fff;
+    transform: rotate(-90deg);
+    transform-origin: bottom right;
+    top: 30%;
+    z-index: 100000;
+  }
+}
+
+@include mobile {
+  .tw-btn {
+    padding: 12px;
+
+    &--sticky { 
+      display: none;
+    }
+  }
+}

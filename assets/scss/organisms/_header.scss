@@ -1,0 +1,203 @@
+// Header
+.tw-header {
+  padding: $spacer-5 $spacer-0 $spacer-2 $spacer-0;
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  border-bottom: 1px solid $color-grey-4;
+  z-index: 10;
+  &__logo {
+    max-width: 110px;
+    height: auto;
+    margin-bottom: $spacer-3;
+  }
+  .navbar-brand {
+    padding: $spacer-0;
+    margin: $spacer-0;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: end;
+  }
+  &__nav-link {
+    color: $color-white;
+    font-size: 12px;
+    font-weight: $font-bold;
+    transition: all 0.3s;
+    position: relative;
+    text-transform: uppercase;
+    padding-bottom: $spacer-3;
+    &:hover {
+      color: $color-blue;
+    }
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      content: "";
+      width: 0;
+      height: 2px;
+      background-color: $color-blue;
+      transition: all 0.3s;
+      transform: translate(-50%, 0%);
+    }
+    &.active {
+      border-bottom: 3px solid $color-dark-green-3;
+    }
+    &:hover::after {
+      width: 50%;
+    }
+  }
+  &__nav-item {
+    margin: $spacer-0 $spacer-3;
+    &:last-child {
+      margin-right: $spacer-0;
+    }
+  }
+  &.sticky {
+    position: fixed;
+    padding: 0;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: $color-white;
+    animation: slide-down 0.3s linear forwards;
+    backdrop-filter: blur(15px);
+    background-color: rgba(215, 215, 215, 0.5);
+    border-bottom: none;
+    &:after {
+      content: none;
+    }
+
+    .navbar-toggler {
+      svg path {
+        stroke: $color-dark-green-1;
+      }
+    }
+
+    .tw-header__nav-link {
+      color: $color-dark-green-1;
+    }
+    .navbar {
+      padding-bottom: 0;
+    }
+    .navbar-toggler {
+      margin: $spacer-0;
+    }
+    .tw-header__navbar {
+      padding: $spacer-3 0px;
+    }
+    .tw-header__logo {
+      width: 160px;
+    }
+  }
+  .sticky {
+    transform: translateY(-200px);
+    transition: all 0.3s;
+  }
+  .navbar-toggler {
+    padding: $spacer-0;
+    right: 0;
+    position: absolute;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  &__fade {
+    display: none;
+  }
+  &__close {
+    display: none;
+  }
+  &__navbar {
+    padding: $spacer-0;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+
+    .navbar-nav {
+      align-items: center;
+    }
+  }
+  &__button {
+    margin-left: 80px;
+  }
+}
+
+@include mobile-tablet {
+  .tw-header {
+    padding: $spacer-2;
+    &__fade {
+      display: block;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: all 0.3s;
+    }
+    &__logo {
+      margin-bottom: 0;
+    }
+    &__nav-item {
+      margin: 12px $spacer-0;
+    }
+    &__navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: $spacer-2 $spacer-0;
+      .navbar-collapse {
+        .navbar-nav {
+          position: fixed;
+          top: 0;
+          right: 0;
+          background-color: $color-white;
+          width: 280px;
+          padding: $spacer-3;
+          height: 100vh;
+          margin-left: 0;
+          transform: translateX(300px);
+          // transform: translateX(280px);
+          transition: all 0.3s;
+          opacity: 0;
+          align-items: flex-start;
+        }
+        .tw-header__close {
+          display: block;
+          position: absolute;
+          top: 0;
+          // left: 95%;
+          right: 16px;
+          margin-top: $spacer-3;
+          transform: translateX(-350px);
+          opacity: 1;
+          transition: all 0.5s;
+        }
+        &.show {
+          .navbar-nav {
+            transform: translateX(0px);
+            opacity: 1;
+          }
+          .tw-header__close {
+            transform: translateX(0px);
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &__nav-link {
+      color: $color-dark-green-1;
+    }
+    &__button {
+      margin: $spacer-3 $spacer-0 $spacer-0 $spacer-0;
+    }
+  }
+}
+@include mobile {
+  .tw-header {
+    padding: $spacer-3 $spacer-0;
+  }
+}

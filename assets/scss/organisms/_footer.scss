@@ -1,0 +1,120 @@
+//Footer
+
+.tw-footer {
+    padding: $spacer-7 $spacer-0 $spacer-0;
+    font-size: 14px;
+    color: $color-black;
+  
+    &__logo-img {
+      width: 150px;
+      height: auto;
+      margin-bottom: $spacer-4;
+    }
+    &__logo-sec {
+      max-width: 450px;
+    }
+  
+    &__main-head {
+      font-size: 32px;
+      font-weight: 400;
+      @include Felixti;
+    }
+    &__quiklink-sec {
+      display: flex;
+    }
+    &__quiklink-item {
+      margin-right: $spacer-3;
+      &:last-of-type {
+        margin-right: $spacer-0;
+      }
+    }
+    &__quiklink-head {
+      font-weight: $font-semi-bold;
+      font-size: 16px;
+      margin-bottom: $spacer-3;
+      text-transform: uppercase;
+      position: relative;
+    }
+  
+    &__quiklink-links {
+      margin-bottom: $spacer-3;
+    }
+  
+    &__quiklink-inner {
+      display: flex;
+    }
+  
+    &__cont-detils {
+      background: $color-dark-green-1;
+      margin: 0 $spacer-1;
+      border-radius: 50px;
+      span {
+        display: none;
+      }
+    }
+  
+    &__cont-img {
+      width: 30px;
+      height: 30px;
+    }
+  
+    &__bottom {
+      border-top: 1px solid $color-grey-5;
+      padding: $spacer-3 0;
+      margin-top: $spacer-4;
+    }
+    &__terms {
+      display: flex;
+      justify-content: end;
+      li {
+        margin: 0 $spacer-2;
+        text-transform: uppercase;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+    &__signup-form {
+      display: flex;
+      .tw-btn {
+        border-radius: 0 6px 6px 0;
+      }
+    }
+  
+    &__signup-input {
+      height: 50px;
+      padding: $spacer-2 $spacer-3;
+      border: 0;
+      background-color: $color-grey-2;
+    }
+  }
+  
+  @include mobile-tablet {
+    .tw-footer {
+      &__quiklink-head {
+        &::after {
+          display: block;
+          transition: 0.3s;
+        }
+        &.arrow {
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      &__signup-form {
+        flex-direction: column;
+        .tw-btn {
+          border-radius: 6px;
+        }
+      }
+  
+      &__signup-input {
+        margin-bottom: $spacer-3;
+      }
+      &__terms {
+        justify-content: start;
+      }
+    }
+  }
+  

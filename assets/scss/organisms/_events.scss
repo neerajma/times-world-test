@@ -1,0 +1,56 @@
+
+// Events
+
+.tw-events {
+    padding: $spacer-7 0;
+    &__item {
+      &:hover {
+        .tw-events__item-footer {
+          box-shadow: 3px 4px 10px 1px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  
+    &__item-footer {
+      background: $color-dark-green-1;
+      color: $color-white;
+      padding: $spacer-2 $spacer-3;
+      text-align: left;
+      width: 100%;
+      p {
+        max-width: 300px;
+      }
+    }
+    &__item-footer-arrow {
+      background-image: url("data:image/svg+xml,%3Csvg width='85' height='37' viewBox='0 0 85 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.34436 17.8501H83.6444M66.4444 0.850098C69.2444 6.4501 76.6444 17.7501 84.3444 17.7501C78.3444 17.9501 68.8444 25.5501 66.4444 36.6501' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 50px;
+      height: 35px;
+    }
+    &__item-inner {
+      box-shadow: 3px 4px 10px 1px #00000033;
+    }
+    &__item-bottom {
+      padding: $spacer-3;
+    }
+    &__item-sub-title {
+      margin-bottom: $spacer-3;
+      display: block;
+    }
+    &__item-title {
+      @include Felixti;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: $spacer-3;
+    }
+    &__item-desc {
+      font-size: 14px;
+    }
+    &__slider {
+      .slick-list {
+        padding: 0 20% 0 0;
+      }
+    }
+  }
